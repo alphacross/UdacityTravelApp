@@ -1,8 +1,6 @@
-import { checkForName } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
+import { addTrip, createTripContainer } from './js/tripHandler'
+import './styles/site.scss'
 
-import './styles/base.scss'
-import './styles/footer.scss'
-import './styles/form.scss'
-import './styles/header.scss'
-import './styles/reset.scss'
+export{
+    addTrip, createTripContainer
+}

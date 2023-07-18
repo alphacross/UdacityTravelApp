@@ -1,0 +1,106 @@
+@import 'reset.scss';
+@import '_variables.scss';
+
+h1 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: .75rem;
+    padding-left: .75rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -.75rem;
+    margin-right: -.75rem;
+
+    &>[class^='col'] {
+        padding-left: .75rem;
+        padding-right: .75rem;
+    }
+}
+
+.col {
+    flex: 1 0 0%;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: calc($i / 12 * 100%)
+    }
+}
+
+@media (min-width: 576px) {
+    @for $i from 1 through 12 {
+        .col-sm-#{$i} {
+            width: calc($i / 12 * 100%)
+        }
+    }
+}
+
+@each $i,
+$space in $spacers {
+    .m-#{$i} {
+        margin: $space;
+    }
+
+    .mt-#{$i} {
+        margin-top: $space;
+    }
+
+    .mx-#{$i} {
+        margin-right: $space;
+        margin-left: $space;
+    }
+
+    .my-#{$i} {
+        margin-top: $space;
+        margin-bottom: $space;
+    }
+
+    .p-#{$i} {
+        padding: $space;
+    }
+
+    .px-#{$i} {
+        padding-left: $space;
+        padding-right: $space;
+    }
+
+    .py-#{$i} {
+        padding-top: $space;
+        padding-bottom: $space;
+    }
+}
+
+.trip {
+    padding: 10px;
+}
+
+.text-center {
+    text-align: center;
+}

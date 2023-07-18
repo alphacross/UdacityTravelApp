@@ -1,38 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-    </head>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>Travel Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-        <header>
-            <div class="">
-                Logo
+<body>
+    <main class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-6">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="py-5">Travel Planner</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="trips">
+                            <h2 class="my-2">My Trips</h2>
+                            <div class="row trip">
+                                <div class="col-12 col-sm-4">
+                                    <img class="img-fluid" src="https://placehold.co/600x400">
+                                </div>
+                                <div class="col">
+                                    <h3 class="fw-bold">My Trip to: <span class='tripDestination'>Spain</span></h3>
+                                    <h3 class="fw-bold">Departing: <span class='tripDate'>12/02/2022</span></h3>
+                                    <p>
+                                        <span class='tripDestination'>Spain</span> is <span class="tripCountdown">220</span> days away
+                                    </p>
+                                    <p>Typical weather for then is:</p>
+                                    <p>High <span class="highWeather">46</span> Low <span class="lowWeather">23</span></p>
+                                    <p class="cloudCondition">Mostly Cloudy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col py-3" style="background-color: grey;">
+                        <div class="row">
+                            <h2 class="col-2">My trip to</h2>
+                            <div class="col">
+                                <input type="text" id="TripLocation" name="TripLocation" placeholder="Enter Location"/>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <h2 class="col-2">My trip to</h2>
+                            <div class="col">
+                                <input type="text" id="TripDate" name="TripDate" placeholder="MM/DD/YYYY"/>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col text-center">
+                                <button onclick="SaveTrip()">Save Trip</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+        </div>
+    </main>
+</body>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            </section>
-
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
-
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
-    </body>
 </html>
