@@ -99,8 +99,15 @@ $space in $spacers {
 
 .trip {
     padding: 10px;
+    &:nth-child(even){
+        background-color: skyblue;
+    }
 }
 
 .text-center {
     text-align: center;
+}
+
+.text-end{
+    text-align: right;
 }

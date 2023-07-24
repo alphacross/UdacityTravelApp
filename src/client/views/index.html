@@ -9,33 +9,37 @@
 
 <body>
     <main class="container-fluid">
+        <template>
+            <div class="row trip">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+                            <img class="img-fluid tripImage" src="https://placehold.co/600x400">
+                        </div>
+                        <div class="col">
+                            <h3 class="fw-bold">My Trip to: <span class='tripDestination'>Spain</span></h3>
+                            <h3 class="fw-bold">Departing: <span class='tripDate'>12/02/2022</span></h3>
+                            <p>
+                                <span class='tripDestination'>Spain</span> is <span class="tripCountdown">220</span> days away
+                            </p>
+                            <p>Typical weather for then is:</p>
+                            <p>High <span class="highWeather">46</span> Low <span class="lowWeather">23</span></p>
+                            <p class="cloudCondition">Mostly Cloudy</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end">
+                            <button onclick="Client.removeTrip(this)">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
         <div class="row justify-content-center">
             <div class="col-12 col-sm-6">
                 <div class="row">
                     <div class="col">
                         <h1 class="py-5">Travel Planner</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div id="trips">
-                            <h2 class="my-2">My Trips</h2>
-                            <div class="row trip">
-                                <div class="col-12 col-sm-4">
-                                    <img class="img-fluid" src="https://placehold.co/600x400">
-                                </div>
-                                <div class="col">
-                                    <h3 class="fw-bold">My Trip to: <span class='tripDestination'>Spain</span></h3>
-                                    <h3 class="fw-bold">Departing: <span class='tripDate'>12/02/2022</span></h3>
-                                    <p>
-                                        <span class='tripDestination'>Spain</span> is <span class="tripCountdown">220</span> days away
-                                    </p>
-                                    <p>Typical weather for then is:</p>
-                                    <p>High <span class="highWeather">46</span> Low <span class="lowWeather">23</span></p>
-                                    <p class="cloudCondition">Mostly Cloudy</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="row mt-2">
@@ -47,15 +51,22 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <h2 class="col-2">My trip to</h2>
+                            <h2 class="col-2">Trip Date</h2>
                             <div class="col">
-                                <input type="text" id="TripDate" name="TripDate" placeholder="MM/DD/YYYY"/>
+                                <input type="text" id="TripDate" name="TripDate" placeholder="DD/MM/YYYY"/>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col text-center">
-                                <button onclick="SaveTrip()">Save Trip</button>
+                                <button onclick="Client.addTrip()">Save Trip</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <h2 class="my-2">My Trips</h2>
+                        <div id="trips">
                         </div>
                     </div>
                 </div>
