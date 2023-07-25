@@ -11,17 +11,25 @@ app.use(express.static('dist'))
 app.use(cors());
 app.use(express.json());
 
+///Get Weather function
 async function getWeather(lat, long){
     var apiUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?days=1&lat=' + lat + '&lon='+ long + '&key=' + process.env.WEATHER_API_KEY;
+    //fetch the data from weatherbit
     const res = await fetch(apiUrl);
+    //convert the response into json object
     var data = await res.json();
     return data;
 }
 
+///Get City Image
 async function getImage(keyword){
     var apiUrl = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${keyword.replace(/ /g, '+')}&image_type=photo&pretty=true`;
+    //fetch Data from Pixabay
     const res = await fetch(apiUrl);
+    //Convert to json object
     var data = await res.json();
+
+    //return image url if there's a hit, else return null
     if(data.hits.length > 0){
         return data.hits[0].webformatURL;
     }
@@ -41,6 +49,7 @@ app.get('/')
 
 app.get('/getCountry', async function(req, res){
     const getCountryRes = await fetch(`http://api.geonames.org/searchJSON?username=${process.env.GEO_USERNAME}&name_equals=${req.query.name}`);
+    ///Get data from geonames using city/country name provided by the user and convert it to json object
     var result = await getCountryRes.json();
 
     res.send(result.geonames[0]);
